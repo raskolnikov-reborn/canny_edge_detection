@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="cv_camera" type="cv_camera_node" name="cv_camera" output="screen" /> 
+  <node pkg="canny_edge_my_face" type="canny_edge_my_face_node" name="canny_edge_detection" output="screen" >
+    <rosparam>
+      input_topic: "/cv_camera/image_raw"
+      output_topic: "processed_image"
+      lower_canny_threshold: 10
+      upper_canny_threshold: 400
+    </rosparam>
+   </node>
+
+
+</launch>
+
